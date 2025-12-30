@@ -1,0 +1,14 @@
+
+ [1767017159076] : / method: GET
+ [1767017180346] : /2 method: DELETE
+ [1767017222984] : / method: POST
+ [1767017228099] : / method: GET
+ [1767018627323] : /books method: GET
+ [1767018627702] : /favicon.ico method: GET
+ [1767019657855] : /books/ method: GET
+ [1767019665332] : /books/ method: POST
+ [1767019668507] : /books/ method: GET
+ [1767019675879] : /books/3 method: GET
+ [1767019681008] : /books/3 method: DELETE
+ [1767019684641] : /books/3 method: GET
+ [1767019687235] : /books/ method: GET
