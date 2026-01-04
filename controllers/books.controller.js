@@ -1,22 +1,32 @@
 const books = require('../models/xzy');
-
-exports.getAllBooks = function(req,res){
-    res.json(books);
+const {booksTable, authorTable} = require('../models/index.js');
+const db = require('../db/index.js');
+const { drizzle } = require('drizzle-orm/node-postgres');
+const {eq } = require("drizzle-orm");
+ 
+exports.getAllBooks = async function(req,res){
+    // res.json(books);
+    
+    const bookies = await db.select().from(booksTable);
+    console.log('Getting all users from the database: ', bookies)
+    return res.json(bookies);
 };
 
-exports.getBookById = function(req,res){
+exports.getBookById = async function(req,res){
     const id= req.params.id;
-    if(isNaN(id)){
-        res.status(400).json("Type a valid number");
-    };
-    const book = books.find((e)=> e.id == id );
-    if(!book){
-        return res.status(404).json("not found");
+    
+    try{
+    const book = await db.select().from(booksTable)
+    .where(
+        eq( booksTable.id , id)
+    );
+    return res.json(book);
+    }catch{
+        return res.status(404).json("no such book exist!")
     }
-    res.json(book);
 };
 
-exports.createBook = function(req,res){
+exports.createBook = async function(req,res){
     const {title, author} = req.body;
     if(!title || title===''){
         return res.status(400).send("Title is required!");
@@ -25,12 +35,15 @@ exports.createBook = function(req,res){
         return res.status(400).send("Author is required!");
     }
     const len= books.length;
-    books.push({"id": len+1,
-        "title": title,
-        "author": author
-    })
-    console.log(title,author);
-    res.status(201).json({ "book created sucessfully": books.at(len)});
+    
+    // books.push({"id": len+1,
+    //     "title": title,
+    //     "author": author
+    // })
+    
+    // console.log(title,author);
+    // res.status(201).json({ "book created sucessfully": books.at(len)});
+    
 
 };
 

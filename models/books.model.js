@@ -5,7 +5,7 @@ const booksTable = pgTable('books',{
     id:uuid().primaryKey().defaultRandom(),
     title: varchar({ length:100}).notNull().unique(),
     authorId: uuid().references( () => {
-        authorTable.id;
+        return authorTable.id;
     }).notNull(),
 });
 

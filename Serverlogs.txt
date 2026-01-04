@@ -12,3 +12,16 @@
  [1767019681008] : /books/3 method: DELETE
  [1767019684641] : /books/3 method: GET
  [1767019687235] : /books/ method: GET
+ [1767141156578] : /books/ method: GET
+ [1767142770259] : /books/ method: GET
+ [1767142792114] : /books/46076f1c-3215-41d8-82cc-074cc3a4e44e method: GET
+ [1767143275432] : /books/46076f1c-3215-41d8-82cc-074cc3a4e44e method: GET
+ [1767143285845] : /books/46076f1c-3215-41d%5Cf8-82cc-074cc3a4e44e method: GET
+ [1767143296688] : /books/ method: GET
+ [1767143306962] : /books/63ed110a-c312-4d2c-a801-678019fac332 method: GET
+ [1767517015057] : /books/ method: GET
+ [1767517030720] : /books/ method: GET
+ [1767517043319] : /books/ method: POST
+ [1767517071296] : /books/ method: GET
+ [1767517090507] : /books/63ed110a-c312-4d2c-a801-678019fac332 method: GET
+ [1767517113832] : /books/12-4d2c-a801-678019fac332 method: GET
