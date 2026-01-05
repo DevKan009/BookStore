@@ -25,3 +25,11 @@
  [1767517071296] : /books/ method: GET
  [1767517090507] : /books/63ed110a-c312-4d2c-a801-678019fac332 method: GET
  [1767517113832] : /books/12-4d2c-a801-678019fac332 method: GET
+ [1767523877357] : /books/46076f1c-3215-41d8-82cc-074cc3a4e44e method: GET
+ [1767523934837] : /books/46076f1c-3215-41d8-82cc-074cc3a4e44e method: GET
+ [1767524242181] : /books/46076f1c-3215-41d8-82cc-074cc3a4e44e method: POST
+ [1767524250925] : /books method: POST
+ [1767524274550] : /books method: GET
+ [1767602049899] : /books method: GET
+ [1767602079515] : /books method: POST
+ [1767602139036] : /books method: POST
