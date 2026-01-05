@@ -33,3 +33,23 @@
  [1767602049899] : /books method: GET
  [1767602079515] : /books method: POST
  [1767602139036] : /books method: POST
+ [1767602357102] : /books method: POST
+ [1767602659246] : /books method: POST
+ [1767602674009] : /books/58bebc03-e7ad-49af-8af8-dbaf9db52a5b method: GET
+ [1767602702736] : /books/ method: GET
+ [1767602849106] : /books/ method: POST
+ [1767602862587] : /books/1c655dc1-a8d4-410d-9aa2-07c2d152e334 method: GET
+ [1767602905919] : /books/1c655dc1-a8d4-410d-9aa2-07c2d152e334 method: GET
+ [1767602934328] : /books/1c655dc1-a8d4-410d-9aa2-07c2d152e334 method: GET
+ [1767602964393] : /books/ method: GET
+ [1767602985386] : /books/1c655dc1-a8d4-410d-9aa2-07c2d152e334 method: DELETE
+ [1767602992361] : /books/1c655dc1-a8d4-410d-9aa2-07c2d152e334 method: GET
+ [1767602998024] : /books/ method: GET
+ [1767604562446] : /books method: GET
+ [1767605853463] : /books/ method: GET
+ [1767605868811] : /books/63ed110a-c312-4d2c-a801-678019fac332 method: GET
+ [1767605993953] : /books method: GET
+ [1767607410601] : /books/63ed110a-c312-4d2c-a801-678019fac332 method: DELETE
+ [1767607549753] : /books/ method: POST
+ [1767609210086] : /books?search=node method: POST
+ [1767609278468] : /books?search=node method: POST

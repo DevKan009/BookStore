@@ -6,7 +6,8 @@ const {eq } = require("drizzle-orm");
  
 exports.getAllBooks = async function(req,res){
     // res.json(books);
-    
+    const search = req.query.search;
+    console.log({search});
     const bookies = await db.select().from(booksTable);
     console.log('Getting all users from the database: ', bookies)
     return res.json(bookies);
@@ -15,9 +16,9 @@ exports.getAllBooks = async function(req,res){
 exports.getBookById = async function(req,res){
     const id= req.params.id;
     const [book] = await db.select().from(booksTable)
-    .where((table) =>{
-        eq(table.id,id)
-    })
+    .where(
+        eq(booksTable.id,id)
+    )
     .limit(1);
     if(!book){
         return res
@@ -29,16 +30,14 @@ exports.getBookById = async function(req,res){
 };
 
 exports.createBook = async function(req,res){
-    const {title, author} = req.body;
+    const {title, authorId} = req.body;
     if(!title || title===''){
         return res.status(400).send("Title is required!");
     }
     const [result] = await db.insert(booksTable).values({
-        title,
-        author
-    }).returning({
-        id: booksTable.id
-    });
+        title:title,
+        authorId : authorId,
+    }).returning();
     return res
         .status(201)
         .json({message:"book created sucessfully ", id: result.id})
