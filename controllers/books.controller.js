@@ -2,16 +2,27 @@ const books = require('../models/xzy');
 const {booksTable, authorTable} = require('../models/index.js');
 const db = require('../db/index.js');
 const { drizzle } = require('drizzle-orm/node-postgres');
-const {eq } = require("drizzle-orm");
- 
+const {eq} = require("drizzle-orm");
+const { sql } = require('drizzle-orm');
+
 exports.getAllBooks = async function(req,res){
     // res.json(books);
     const search = req.query.search;
     console.log({search});
+    if(search){
+        const bookies = await db.select().from(booksTable)
+        .where(
+            sql`to_tsvector('english', ${booksTable.title}) @@ to_tsquery('english', ${search})`
+        );
+    return res.status(200).json(bookies);
+    
+    }else{
     const bookies = await db.select().from(booksTable);
     console.log('Getting all users from the database: ', bookies)
     return res.json(bookies);
+    };
 };
+
 
 exports.getBookById = async function(req,res){
     const id= req.params.id;
